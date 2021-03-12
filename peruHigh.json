@@ -1,0 +1,139 @@
+[
+{
+  "image": {
+    "name": "./api/tmp/d839529ee47c8d00ec4c55bdd8bcf5de/peruHigh.svg",
+    "format": "SVG",
+    "formatDescription": "Scalable Vector Graphics",
+    "mimeType": "image/svg+xml",
+    "class": "DirectClass",
+    "geometry": {
+      "width": 543,
+      "height": 792,
+      "x": 0,
+      "y": 0
+    },
+    "resolution": {
+      "x": 96,
+      "y": 96
+    },
+    "printSize": {
+      "x": 5.65625,
+      "y": 8.25
+    },
+    "units": "Undefined",
+    "type": "GrayscaleAlpha",
+    "endianess": "Undefined",
+    "colorspace": "sRGB",
+    "depth": 16,
+    "baseDepth": 16,
+    "channelDepth": {
+      "alpha": 1,
+      "red": 16,
+      "green": 16,
+      "blue": 16
+    },
+    "pixels": 430056,
+    "imageStatistics": {
+      "all": {
+        "min": 52428,
+        "max": 65535,
+        "mean": 61123.6,
+        "standardDeviation": 4847.89,
+        "kurtosis": -1.50785,
+        "skewness": -0.692504,
+        "entropy": 0.14745
+      }
+    },
+    "channelStatistics": {
+      "alpha": {
+        "min": 0,
+        "max": 0,
+        "mean": 0,
+        "standardDeviation": 0,
+        "kurtosis": 8.192e+51,
+        "skewness": 1e+36,
+        "entropy": 0
+      },
+      "red": {
+        "min": 52428,
+        "max": 65535,
+        "mean": 59653.1,
+        "standardDeviation": 6463.86,
+        "kurtosis": -1.94346,
+        "skewness": -0.206989,
+        "entropy": 0.1966
+      },
+      "green": {
+        "min": 52428,
+        "max": 65535,
+        "mean": 59653.1,
+        "standardDeviation": 6463.86,
+        "kurtosis": -1.94346,
+        "skewness": -0.206989,
+        "entropy": 0.1966
+      },
+      "blue": {
+        "min": 52428,
+        "max": 65535,
+        "mean": 59653.1,
+        "standardDeviation": 6463.86,
+        "kurtosis": -1.94346,
+        "skewness": -0.206989,
+        "entropy": 0.1966
+      }
+    },
+    "renderingIntent": "Perceptual",
+    "gamma": 0.454545,
+    "chromaticity": {
+      "redPrimary": {
+        "x": 0.64,
+        "y": 0.33
+      },
+      "greenPrimary": {
+        "x": 0.3,
+        "y": 0.6
+      },
+      "bluePrimary": {
+        "x": 0.15,
+        "y": 0.06
+      },
+      "whitePrimary": {
+        "x": 0.3127,
+        "y": 0.329
+      }
+    },
+    "backgroundColor": "#FFFFFFFFFFFFFFFF",
+    "borderColor": "#DFDFDFDFDFDFFFFF",
+    "matteColor": "#BDBDBDBDBDBDFFFF",
+    "transparentColor": "#0000000000000000",
+    "interlace": "None",
+    "intensity": "Undefined",
+    "compose": "Over",
+    "pageGeometry": {
+      "width": 543,
+      "height": 792,
+      "x": 0,
+      "y": 0
+    },
+    "dispose": "Undefined",
+    "iterations": 0,
+    "compression": "Undefined",
+    "orientation": "Undefined",
+    "properties": {
+      "date:create": "2021-03-12T18:57:14+00:00",
+      "date:modify": "2021-03-12T18:57:14+00:00",
+      "signature": "31f0a6b9f4dea2bb1c25c358cdfbefaecd6790e0c323485a5c1cbee1aece6f82"
+    },
+    "artifacts": {
+      "filename": "./api/tmp/d839529ee47c8d00ec4c55bdd8bcf5de/peruHigh.svg"
+    },
+    "tainted": false,
+    "filesize": "0B",
+    "numberPixels": "430056",
+    "pixelsPerSecond": "6.2464MB",
+    "userTime": "0.070u",
+    "elapsedTime": "0:01.068",
+    "version": "ImageMagick 6.9.10-68 Q16 x86_64 2020-04-01 https://imagemagick.org"
+  }
+}
+]
