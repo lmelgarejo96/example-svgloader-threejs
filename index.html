@@ -88,7 +88,8 @@
 
             window.addEventListener('resize', onWindowResize);
             window.addEventListener('mousemove', onDocumentMouseDown, false);
-            window.addEventListener('touchmove', onDocumentMouseDown, false);
+            document.addEventListener('touchstart', onDocumentMouseDown, false);
+            //document.addEventListener('touchstart', onMouseClick, false);
             window.addEventListener('click', onMouseClick, false);
 
             guiData = {
@@ -261,11 +262,17 @@
         let lastColor = null;
 
         function onDocumentMouseDown(event) {
-
-            event.preventDefault();
-
-            mouse.x = (event.clientX / renderer.domElement.clientWidth) * 2 - 1;
-            mouse.y = -(event.clientY / renderer.domElement.clientHeight) * 2 + 1;
+            //event.preventDefault();
+            const isMob = isMobile();
+            if (isMob) {
+                if (event.targetTouches) {
+                    mouse.x = +(event.targetTouches[0].pageX / window.innerWidth) * 2 + -1;
+                    mouse.y = -(event.targetTouches[0].pageY / window.innerHeight) * 2 + 1;
+                }
+            } else {
+                mouse.x = (event.clientX / renderer.domElement.clientWidth) * 2 - 1;
+                mouse.y = -(event.clientY / renderer.domElement.clientHeight) * 2 + 1;
+            }
 
             raycaster.setFromCamera(mouse, camera);
 
@@ -274,6 +281,7 @@
             if (intersects.length > 0) {
                 //console.log(intersects[0]);
                 //if (intersects[0].object.material.userData.nodeName != "polyline") return;
+
                 lastColor = intersects[0].object.material.color.getHex();
                 intersects[0].object.material.color.set(0xff0000);
 
@@ -289,6 +297,10 @@
 
                 }
 
+                if (isMob) {
+                    onMouseClick();
+                }
+
             } else {
 
                 if (INTERSECTED) {
@@ -298,12 +310,25 @@
                 INTERSECTED = null;
                 lastColor = null;
             }
+
         }
 
         function onMouseClick(event) {
             if (INTERSECTED) {
-                console.log(INTERSECTED);
+                alert("Se intersectó un punto de tipo " + INTERSECTED.material.userData.nodeName + " y de id = " + INTERSECTED.id);
+                //console.log(INTERSECTED);
             }
+        }
+
+        function isMobile() {
+            return (
+                (navigator.userAgent.match(/Android/i)) ||
+                (navigator.userAgent.match(/webOS/i)) ||
+                (navigator.userAgent.match(/iPhone/i)) ||
+                (navigator.userAgent.match(/iPod/i)) ||
+                (navigator.userAgent.match(/iPad/i)) ||
+                (navigator.userAgent.match(/BlackBerry/i))
+            );
         }
 
         function render() {
