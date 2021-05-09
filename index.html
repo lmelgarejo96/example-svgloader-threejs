@@ -93,7 +93,7 @@
             window.addEventListener('click', onMouseClick, false);
 
             guiData = {
-                currentURL: 'vea.svg',
+                currentURL: 'svgs/lima.svg',
                 drawFillShapes: true,
                 drawStrokes: true,
                 fillShapesWireframe: false,
@@ -102,7 +102,7 @@
 
             loadSVG(guiData.currentURL);
 
-            createGUI();
+            //createGUI();
 
 
         }
@@ -117,10 +117,11 @@
 
             gui.add(guiData, 'currentURL', {
 
-                "1er Piso - Mega Plaza": 'vea.svg',
-                "2do Piso - Mega Plaza": 'piso2.svg',
+                /* "1er Piso - Mega Plaza": 'vea.svg', */
+                "Lima Metropolitana": 'svgs/lima.svg',
+                /* "2do Piso - Mega Plaza": 'piso2.svg',
                 "Mapa del Perú": 'peruHigh.svg',
-                "Mapa del EE.UU": 'usaHigh.svg',
+                "Mapa del EE.UU": 'usaHigh.svg', */
 
             }).name('Archivo SVG').onChange(update);
 
@@ -170,11 +171,13 @@
                 for (let i = 0; i < paths.length; i++) {
 
                     const path = paths[i];
+                    //console.log("PATH", path.userData.node.id);
                     const fillColor = path.userData.style.fill;
                     if (guiData.drawFillShapes && fillColor !== undefined && fillColor !== 'none') {
 
+                        //console.log("FIILL"+fillColor);
                         const material = new THREE.MeshBasicMaterial({
-                            color: fillColor == "#000" ? Math.random() * 0xffffff : new THREE.Color().setStyle(fillColor),
+                            color: fillColor == "rgb(209, 209, 209)" ? new THREE.Color().setStyle('#c2d27a') /* Math.random() * 0xffffff */ : new THREE.Color().setStyle(fillColor),
                             opacity: path.userData.style.fillOpacity,
                             transparent: path.userData.style.fillOpacity < 1,
                             userData: path.userData.node,
@@ -281,6 +284,8 @@
             if (intersects.length > 0) {
                 //console.log(intersects[0]);
                 //if (intersects[0].object.material.userData.nodeName != "polyline") return;
+                const ELEMENT = intersects[0].object.material.userData;
+                if (!ELEMENT.id) return;
 
                 lastColor = intersects[0].object.material.color.getHex();
                 intersects[0].object.material.color.set(0xff0000);
@@ -315,7 +320,13 @@
 
         function onMouseClick(event) {
             if (INTERSECTED) {
-                console.log("Se intersectó un punto de tipo " + INTERSECTED.material.userData.nodeName + " y de id = " + INTERSECTED.id);
+
+                const ID = INTERSECTED.material.userData.id;
+                let msg = "Se intersectó un punto de tipo " + INTERSECTED.material.userData.nodeName + " y de Three.js id = " + INTERSECTED.id + " \nDe NODO ID = " + ID;
+                if (ID) {
+                    //console.log();
+                    alert(msg)
+                }
                 //console.log(INTERSECTED);
             }
         }
